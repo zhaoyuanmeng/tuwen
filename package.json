@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "local": "next dev",
-    "build": "next build",
-    "start:dev": "node scripts/start.js .env.development",
-    "start": "next start",
-    "lint": "next lint"
+    "local": "node scripts/dev-with-env.js .env.local",
+    "prod": "node scripts/dev-with-env.js .env.production",
+    "build:prod": "node scripts/build-with-env.js .env.production",
+    "build:staging": "node scripts/build-with-env.js .env.staging",
+    "build:dev": "node scripts/build-with-env.js .env.development",
+    "start": "next start"
   },
   "dependencies": {
     "autoprefixer": "^10.4.19",
@@ -26,6 +27,7 @@
     "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

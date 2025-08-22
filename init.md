@@ -29,3 +29,12 @@
 
 # 测试
 帮我从 路由鉴权、接口鉴权、页面风格、动画风格、骨架屏、边界条件处理、等方面去优化代码自查验
+
+
+# 启动容器（直接用官方命令，无需挂载.env文件）
+docker run -d \
+  --name my-app-prod \
+  -p 3000:3000 \
+  -v /zyd/uploads:/app/public/uploads \  # 只需要挂载图片目录
+  --restart always \
+  my-app:prod
