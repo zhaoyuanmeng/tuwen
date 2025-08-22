@@ -22,7 +22,7 @@ yarn-error.log*
 .env*.local
 
 # Production environment variables
-.env.production
+
 
 # Environment variables
 .env

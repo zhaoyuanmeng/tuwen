@@ -32,9 +32,7 @@
 
 
 # 启动容器（直接用官方命令，无需挂载.env文件）
-docker run -d \
-  --name my-app-prod \
-  -p 3000:3000 \
-  -v /zyd/uploads:/app/public/uploads \  # 只需要挂载图片目录
-  --restart always \
-  my-app:prod
+
+docker build -t my-app:prod --build-arg ENV_FILE=.env.production .
+
+docker run -d --name zyd-app-prod -p 3000:3000 -v /zyd/uploads:/app/public/uploads zyd-app:prod
