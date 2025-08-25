@@ -8,7 +8,7 @@ interface PhotoDetail {
   id: number
   title: string
   description: string
-  imageUrl: string
+  imageurl: string
   date: string
   content: string
 }
@@ -26,11 +26,11 @@ export default function PhotoDetailPage({ params }: { params: { id: string } }) 
         const result = await response.json()
         
         if (result.success) {
-          // 处理图片路径，添加安全检查确保imageUrl存在且为字符串
+          // 处理图片路径，添加安全检查确保imageurl存在且为字符串
           const photoData = {
             ...result.data,
-            imageUrl: result.data.imageUrl && typeof result.data.imageUrl === 'string' && result.data.imageUrl.startsWith('/uploads/')
-              ? result.data.imageUrl
+            imageurl: result.data.imageurl && typeof result.data.imageurl === 'string' && result.data.imageurl.startsWith('/uploads/')
+              ? result.data.imageurl
               : `https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80`
           };
           setPhoto(photoData);
@@ -89,7 +89,7 @@ export default function PhotoDetailPage({ params }: { params: { id: string } }) 
           {/* 图片展示 */}
           <div className="relative">
             <img
-              src={photo.imageUrl}
+              src={photo.imageurl}
               alt={photo.title}
               className="w-full h-auto object-cover"
             />

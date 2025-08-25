@@ -33,6 +33,6 @@
 
 # 启动容器（直接用官方命令，无需挂载.env文件）
 
-docker build -t my-app:prod --build-arg ENV_FILE=.env.production .
+docker build  -t my-app:prod  .
 
-docker run -d --name zyd-app-prod -p 3000:3000 -v /zyd/uploads:/app/public/uploads zyd-app:prod
+docker run -d --name zyd-app-prod -p 3000:3000 -v /zyd/uploads:/app/public/uploads my-app:prod
