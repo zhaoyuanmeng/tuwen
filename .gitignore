@@ -134,3 +134,4 @@ Thumbs.db
 
 # Public uploads directory (if you want to ignore user uploads)
 public/uploads
+/generated/prisma
